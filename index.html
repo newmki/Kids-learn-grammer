@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsGramner - Educational App for Children</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="tiiny-host-buffer"></div>
+    
+    <div class="app-container">
+        <!-- Top Header Section -->
+        <header class="top-header">
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <h1 class="app-title">KidsGramner</h1>
+            <div class="points-display">
+                <span id="pointsCount">0</span>/100
+            </div>
+        </header>
+
+        <div class="creator-info">Created by MG1999, 2025 version</div>
+        
+        <div class="motivation-container">
+            <p id="motivationText">Learning is fun! Keep exploring!</p>
+        </div>
+
+        <!-- Side Navigation Menu -->
+        <nav class="side-menu" id="sideMenu">
+            <div class="close-btn" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul>
+                <li data-section="home">Home</li>
+                <li data-section="words">A-Z Book</li>
+                <li data-section="numbers">Numbers</li>
+                <li data-section="grammar">Grammar</li>
+                <li data-section="stories">Stories</li>
+                <li data-section="math">Math & Physics</li>
+                <li data-section="course">30-Day Course</li>
+                <li data-section="profile">Profile</li>
+                <li data-section="settings">Settings</li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <section id="home" class="content-section active">
+                <h2>Welcome to KidsGramner!</h2>
+                <div class="feature-grid">
+                    <div class="feature-card" data-section="words">
+                        <i class="fas fa-book"></i>
+                        <h3>WORDS Alphabets</h3>
+                        <p>Learn A-Z with 100 words per letter</p>
+                    </div>
+                    <div class="feature-card" data-section="numbers">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Number - 123</h3>
+                        <p>Learn numbers and their spellings</p>
+                    </div>
+                    <div class="feature-card" data-section="grammar">
+                        <i class="fas fa-pencil-alt"></i>
+                        <h3>Test Grammar</h3>
+                        <p>Practice English grammar</p>
+                    </div>
+                    <div class="feature-card" data-section="stories">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Stories 100+</h3>
+                        <p>Read interesting and epic stories</p>
+                    </div>
+                    <div class="feature-card" data-section="course">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>30-Day Course</h3>
+                        <p>Complete learning journey</p>
+                    </div>
+                    <div class="feature-card" data-section="math">
+                        <i class="fas fa-square-root-alt"></i>
+                        <h3>Math & Physics</h3>
+                        <p>Learn calculations and science</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Words Section -->
+            <section id="words" class="content-section">
+                <h2>A-Z Book</h2>
+                <div class="alphabet-container">
+                    <!-- Alphabet selection buttons -->
+                    <div class="alphabet-buttons">
+                        <button class="alphabet-btn" data-letter="A">A</button>
+                        <button class="alphabet-btn" data-letter="B">B</button>
+                        <button class="alphabet-btn" data-letter="C">C</button>
+                        <button class="alphabet-btn" data-letter="D">D</button>
+                        <button class="alphabet-btn" data-letter="E">E</button>
+                        <button class="alphabet-btn" data-letter="F">F</button>
+                        <button class="alphabet-btn" data-letter="G">G</button>
+                        <button class="alphabet-btn" data-letter="H">H</button>
+                        <button class="alphabet-btn" data-letter="I">I</button>
+                        <button class="alphabet-btn" data-letter="J">J</button>
+                        <button class="alphabet-btn" data-letter="K">K</button>
+                        <button class="alphabet-btn" data-letter="L">L</button>
+                        <button class="alphabet-btn" data-letter="M">M</button>
+                        <button class="alphabet-btn" data-letter="N">N</button>
+                        <button class="alphabet-btn" data-letter="O">O</button>
+                        <button class="alphabet-btn" data-letter="P">P</button>
+                        <button class="alphabet-btn" data-letter="Q">Q</button>
+                        <button class="alphabet-btn" data-letter="R">R</button>
+                        <button class="alphabet-btn" data-letter="S">S</button>
+                        <button class="alphabet-btn" data-letter="T">T</button>
+                        <button class="alphabet-btn" data-letter="U">U</button>
+                        <button class="alphabet-btn" data-letter="V">V</button>
+                        <button class="alphabet-btn" data-letter="W">W</button>
+                        <button class="alphabet-btn" data-letter="X">X</button>
+                        <button class="alphabet-btn" data-letter="Y">Y</button>
+                        <button class="alphabet-btn" data-letter="Z">Z</button>
+                    </div>
+                    
+                    <div class="word-display">
+                        <h3 id="selectedLetter">Select a letter</h3>
+                        <div id="wordsList" class="words-list">
+                            <!-- Words will be loaded here -->
+                            <div class="word-card-placeholder">
+                                Select a letter to see words
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small-words-section">
+                    <h3>Common Small Words</h3>
+                    <div class="small-words-container">
+                        <div class="small-word-card">
+                            <h4>The</h4>
+                            <p>Used to point to a specific item</p>
+                            <p>Example: The book is on the table.</p>
+                        </div>
+                        <div class="small-word-card">
+                            <h4>And</h4>
+                            <p>Used to connect words or groups of words</p>
+                            <p>Example: I like apples and oranges.</p>
+                        </div>
+                        <div class="small-word-card">
+                            <h4>To</h4>
+                            <p>Indicates direction or purpose</p>
+                            <p>Example: I went to school.</p>
+                        </div>
+                        <div class="small-word-card">
+                            <h4>A/An</h4>
+                            <p>Used with singular nouns</p>
+                            <p>Example: I saw a bird. I ate an apple.</p>
+                        </div>
+                        <div class="small-word-card">
+                            <h4>Is</h4>
+                            <p>Form of the verb "to be"</p>
+                            <p>Example: She is happy.</p>
+                        </div>
+                        <!-- More small words can be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Numbers Section -->
+            <section id="numbers" class="content-section">
+                <h2>Numbers 1-100</h2>
+                <div class="number-container">
+                    <div class="number-navigation">
+                        <button class="number-range-btn active" data-range="1-20">1-20</button>
+                        <button class="number-range-btn" data-range="21-40">21-40</button>
+                        <button class="number-range-btn" data-range="41-60">41-60</button>
+                        <button class="number-range-btn" data-range="61-80">61-80</button>
+                        <button class="number-range-btn" data-range="81-100">81-100</button>
+                    </div>
+                    
+                    <div id="numbersList" class="numbers-list">
+                        <!-- Numbers will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="number-game">
+                    <h3>Number Quiz</h3>
+                    <div class="quiz-container">
+                        <p>What is the spelling of <span id="quizNumber">5</span>?</p>
+                        <input type="text" id="numberSpellingInput" placeholder="Type the spelling">
+                        <button id="checkNumberSpelling">Check</button>
+                        <p id="numberQuizResult"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section id="grammar" class="content-section">
+                <h2>English Grammar</h2>
+                
+                <div class="grammar-navigation">
+                    <button class="grammar-nav-btn active" data-topic="nouns">Nouns</button>
+                    <button class="grammar-nav-btn" data-topic="pronouns">Pronouns</button>
+                    <button class="grammar-nav-btn" data-topic="verbs">Verbs</button>
+                    <button class="grammar-nav-btn" data-topic="adjectives">Adjectives</button>
+                    <button class="grammar-nav-btn" data-topic="adverbs">Adverbs</button>
+                    <button class="grammar-nav-btn" data-topic="prepositions">Prepositions</button>
+                    <button class="grammar-nav-btn" data-topic="conjunctions">Conjunctions</button>
+                </div>
+                
+                <div class="grammar-content">
+                    <div id="grammarTopicContent">
+                        <!-- Grammar topic content will be loaded here -->
+                        <div class="grammar-placeholder">
+                            <p>Select a grammar topic to begin learning</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercises-section">
+                    <h3>Grammar Exercises</h3>
+                    <div class="fill-blanks">
+                        <h4>Fill in the Blanks</h4>
+                        <div id="fillBlanksExercise">
+                            <!-- Fill in the blanks exercise will be loaded here -->
+                            <p>Complete the sentence by filling in the blank:</p>
+                            <p>The cat is sleeping ___ the bed.</p>
+                            <div class="options">
+                                <button class="option-btn">on</button>
+                                <button class="option-btn">at</button>
+                                <button class="option-btn">in</button>
+                                <button class="option-btn">under</button>
+                            </div>
+                            <button id="checkFillBlank">Check Answer</button>
+                            <p id="fillBlankResult"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reading-writing">
+                    <h3>Reading & Writing Tasks</h3>
+                    <div class="reading-task">
+                        <h4>Reading Practice</h4>
+                        <div class="reading-passage">
+                            <p>The sun was shining brightly in the sky. Birds were singing in the trees. Children were playing in the park. It was a beautiful day for everyone to enjoy.</p>
+                        </div>
+                        <div class="reading-questions">
+                            <p>What was shining in the sky?</p>
+                            <input type="text" class="reading-answer" data-question="1">
+                            <p>Where were the children playing?</p>
+                            <input type="text" class="reading-answer" data-question="2">
+                            <button id="checkReadingAnswers">Check Answers</button>
+                            <p id="readingResult"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="writing-task">
+                        <h4>Writing Practice</h4>
+                        <p>Write 3-5 sentences about your favorite animal:</p>
+                        <textarea id="writingTextarea" rows="5"></textarea>
+                        <button id="saveWriting">Save Writing</button>
+                        <p id="writingSaved"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stories Section -->
+            <section id="stories" class="content-section">
+                <h2>Stories Collection</h2>
+                
+                <div class="story-categories">
+                    <button class="story-cat-btn active" data-category="interesting">Interesting Stories</button>
+                    <button class="story-cat-btn" data-category="mahabharata">Mahabharata</button>
+                    <button class="story-cat-btn" data-category="ramayana">Ramayana</button>
+                    <button class="story-cat-btn" data-category="bible">Bible</button>
+                    <button class="story-cat-btn" data-category="quran">Quran</button>
+                </div>
+                
+                <div class="stories-list" id="storiesList">
+                    <!-- Stories will be loaded here -->
+                </div>
+                
+                <div class="story-reader" id="storyReader">
+                    <div class="story-reader-header">
+                        <button id="backToStories"><i class="fas fa-arrow-left"></i> Back</button>
+                        <h3 id="storyTitle">Story Title</h3>
+                    </div>
+                    <div id="storyContent" class="story-content">
+                        <!-- Story content will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Math & Physics Section -->
+            <section id="math" class="content-section">
+                <h2>Math & Physics</h2>
+                
+                <div class="math-physics-nav">
+                    <button class="math-nav-btn active" data-topic="addition">Addition</button>
+                    <button class="math-nav-btn" data-topic="subtraction">Subtraction</button>
+                    <button class="math-nav-btn" data-topic="multiplication">Multiplication</button>
+                    <button class="math-nav-btn" data-topic="division">Division</button>
+                    <button class="math-nav-btn" data-topic="fractions">Fractions</button>
+                    <button class="math-nav-btn" data-topic="physics">Basic Physics</button>
+                </div>
+                
+                <div id="mathContent" class="math-content">
+                    <!-- Math content will be loaded here -->
+                    <div class="math-topic-intro">
+                        <h3>Addition</h3>
+                        <p>Addition is putting numbers together to find the total.</p>
+                        <div class="math-example">
+                            <p>Example: 5 + 3 = 8</p>
+                            <p>When we add 5 apples and 3 apples, we get 8 apples in total.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="math-practice">
+                        <h4>Practice Questions</h4>
+                        <div class="practice-question">
+                            <p>What is 7 + 5?</p>
+                            <input type="number" class="math-answer">
+                            <button class="check-math-btn">Check</button>
+                            <span class="math-result"></span>
+                        </div>
+                        <div class="practice-question">
+                            <p>What is 4 + 9?</p>
+                            <input type="number" class="math-answer">
+                            <button class="check-math-btn">Check</button>
+                            <span class="math-result"></span>
+                        </div>
+                        <div class="practice-question">
+                            <p>What is 12 + 8?</p>
+                            <input type="number" class="math-answer">
+                            <button class="check-math-btn">Check</button>
+                            <span class="math-result"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 30-Day Learning Course Section -->
+            <section id="course" class="content-section">
+                <h2>30-Day Learning Course</h2>
+                
+                <div class="course-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="courseProgress"></div>
+                    </div>
+                    <p>Current Progress: Day <span id="currentDay">1</span> of 30</p>
+                </div>
+                
+                <div class="course-calendar">
+                    <!-- Calendar days will be generated here -->
+                </div>
+                
+                <div class="day-lessons" id="dayLessons">
+                    <h3>Day <span id="lessonDay">1</span> Lessons</h3>
+                    <div class="lesson-content">
+                        <!-- Lesson content will be loaded here -->
+                    </div>
+                    
+                    <div class="lesson-completion">
+                        <button id="completeLesson">Mark as Complete</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="content-section">
+                <h2>My Profile</h2>
+                
+                <div class="profile-info">
+                    <div class="profile-picture">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3 id="userName">Young Learner</h3>
+                        <p>Points: <span id="profilePoints">0</span>/100</p>
+                        <p>Days Active: <span id="daysActive">0</span></p>
+                    </div>
+                </div>
+                
+                <div class="achievements">
+                    <h3>My Achievements</h3>
+                    <div class="achievement-list" id="achievementsList">
+                        <!-- Achievements will be loaded here -->
+                        <div class="achievement-placeholder">
+                            <p>Start learning to earn achievements!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="learning-stats">
+                    <h3>Learning Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Words Learned</h4>
+                            <p id="wordsLearned">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Stories Read</h4>
+                            <p id="storiesRead">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Quizzes Completed</h4>
+                            <p id="quizzesCompleted">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Exercises Done</h4>
+                            <p id="exercisesDone">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button id="resetProgress">Reset Progress</button>
+                    <button id="changeUsername">Change Username</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <div class="nav-item active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" data-section="grammar">
+                <i class="fas fa-pencil-alt"></i>
+                <span>Test</span>
+            </div>
+            <div class="nav-item" data-section="stories">
+                <i class="fas fa-book-open"></i>
+                <span>Stories</span>
+            </div>
+            <div class="nav-item" data-section="points">
+                <i class="fas fa-star"></i>
+                <span>Points</span>
+            </div>
+            <div class="nav-item" data-section="profile">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Points Display Modal -->
+    <div class="modal" id="pointsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Points</h2>
+            <div class="points-details">
+                <div class="total-points">
+                    <h3>Total Points: <span id="modalTotalPoints">0</span>/100</h3>
+                    <div class="points-progress-bar">
+                        <div class="points-progress-fill" id="pointsProgressFill"></div>
+                    </div>
+                </div>
+                
+                <div class="points-breakdown">
+                    <h3>Points Breakdown:</h3>
+                    <ul>
+                        <li>Words Learned: <span id="wordPoints">0</span></li>
+                        <li>Exercises Completed: <span id="exercisePoints">0</span></li>
+                        <li>Stories Read: <span id="storyPoints">0</span></li>
+                        <li>Daily Learning: <span id="learningPoints">0</span></li>
+                    </ul>
+                </div>
+                
+                <div class="points-actions">
+                    <p>Keep learning to earn more points!</p>
+                    <button id="pointsModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
